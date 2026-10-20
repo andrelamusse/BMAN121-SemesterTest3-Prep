@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NWU BMAN121 Semester Test 3 Prep • Operations, Marketing & HR/Finance</title>
+  <meta name="description" content="Official North-West University BMAN121 interactive exam preparation application for Semester Test 3 covering Study Units 7, 8, and 9.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+  <!-- Global Navigation Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <a href="#" id="brandHome" class="brand-wrapper" title="North-West University BMAN121 Exam Prep">
+        <div class="brand-badge">NWU</div>
+        <div class="brand-text">
+          <h1>BMAN121 <span class="brand-tag">Test 3</span></h1>
+          <p>Business Management & Administration</p>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <button type="button" id="themeToggle" class="btn-icon" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+          🌙
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main id="mainContent" class="main-content">
+
+    <!-- ===================================================================
+         VIEW 1: HUB / DASHBOARD SCREEN
+         =================================================================== -->
+    <section id="viewHub" class="view-section active">
+      
+      <!-- Hero Banner -->
+      <div class="hero-card">
+        <h2 class="hero-title">BMAN121 Semester Test 3 Mastery Hub</h2>
+        <p class="hero-subtitle">
+          Comprehensive, exam-standard test preparation covering <strong>Study Unit 7</strong> (Operations & Production), 
+          <strong>Study Unit 8</strong> (Marketing Management), and <strong>Study Unit 9</strong> (Finance, Human Resources & SA Labour Legislation).
+        </p>
+
+        <div class="hero-meta">
+          <div class="meta-pill highlight">📚 120 Exam Questions</div>
+          <div class="meta-pill">⏱️ Timed Mock & Untimed Practice</div>
+          <div class="meta-pill">🔍 Detailed Distractor Rationale</div>
+          <div class="meta-pill">📊 Chapter-by-Chapter Analytics</div>
+        </div>
+      </div>
+
+      <!-- Persistent Previous Score Banner -->
+      <div id="lastScoreBanner" style="display: none; background: var(--bg-card); border: 1px solid var(--border-color); border-left: 4px solid var(--nwu-purple); border-radius: var(--radius-md); padding: 1rem 1.25rem; margin-bottom: 2rem; font-size: 0.9rem;">
+      </div>
+
+      <!-- Mode Selection Grid -->
+      <div class="section-heading">
+        <h3 class="section-title">🎯 Select Practice Mode</h3>
+      </div>
+
+      <div class="modes-grid">
+        <!-- Full Mock Exam -->
+        <div class="mode-card featured" data-mode="mock">
+          <div>
+            <div class="mode-icon">⏱️</div>
+            <h4 class="mode-title">Full Mock Exam</h4>
+            <p class="mode-description">
+              Strict exam conditions with a 50-minute countdown timer. Balanced sample across Study Units 7, 8, and 9. 
+              Comprehensive pedagogical rationales revealed upon submission.
+            </p>
+          </div>
+          <div class="mode-footer">
+            <span class="mode-badge">Exam Conditions</span>
+            <button type="button" class="btn-start-mode">Start Exam →</button>
+          </div>
+        </div>
+
+        <!-- Study / Practice Mode -->
+        <div class="mode-card" data-mode="practice">
+          <div>
+            <div class="mode-icon">💡</div>
+            <h4 class="mode-title">Study & Practice Mode</h4>
+            <p class="mode-description">
+              Untimed relaxed exploration. Receive instant pedagogical feedback and deep rationale explaining 
+              *why* the right answer is correct and *why* each distractor fails.
+            </p>
+          </div>
+          <div class="mode-footer">
+            <span class="mode-badge">Untimed • Instant Feedback</span>
+            <button type="button" class="btn-start-mode">Study Mode →</button>
+          </div>
+        </div>
+
+        <!-- Study Unit 7 Focus -->
+        <div class="mode-card" data-mode="su7">
+          <div>
+            <div class="mode-icon">🏭</div>
+            <h4 class="mode-title">SU7: Operations Management</h4>
+            <p class="mode-description">
+              Drill down into transformation models, manufacturing process types (jobbing, batch, mass, continuous), 
+              layouts, capacity, EOQ inventory, JIT/Kanban, and TQM quality costs.
+            </p>
+          </div>
+          <div class="mode-footer">
+            <span class="mode-badge">40 SU7 Questions</span>
+            <button type="button" class="btn-start-mode">Drill SU7 →</button>
+          </div>
+        </div>
+
+        <!-- Study Unit 8 Focus -->
+        <div class="mode-card" data-mode="su8">
+          <div>
+            <div class="mode-icon">🎯</div>
+            <h4 class="mode-title">SU8: Marketing Management</h4>
+            <p class="mode-description">
+              Master the marketing concept, market segmentation (STP), 4 Ps marketing mix, product lifecycle (PLC), 
+              pricing strategies (skimming vs penetration), and consumer behavior.
+            </p>
+          </div>
+          <div class="mode-footer">
+            <span class="mode-badge">40 SU8 Questions</span>
+            <button type="button" class="btn-start-mode">Drill SU8 →</button>
+          </div>
+        </div>
+
+        <!-- Study Unit 9 Focus -->
+        <div class="mode-card" data-mode="su9">
+          <div>
+            <div class="mode-icon">💼</div>
+            <h4 class="mode-title">SU9: Finance, HR & Labour Law</h4>
+            <p class="mode-description">
+              Master financial ratios (current & acid-test), break-even & working capital, recruitment & selection, 
+              plus key SA statutes: BCEA working hours, LRA fair dismissals, CCMA, and EEA.
+            </p>
+          </div>
+          <div class="mode-footer">
+            <span class="mode-badge">40 SU9 Questions</span>
+            <button type="button" class="btn-start-mode">Drill SU9 →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings & Customization Panel -->
+      <div class="settings-panel">
+        <h3 class="section-title" style="margin-bottom: 1.25rem;">⚙️ Test Configuration</h3>
+        <div class="settings-grid">
+          <div class="setting-item">
+            <label for="settingQuestionCount">Questions per Test Session</label>
+            <select id="settingQuestionCount" class="setting-select">
+              <option value="15">15 Questions (Quick Quiz)</option>
+              <option value="25">25 Questions (Standard Practice)</option>
+              <option value="40" selected>40 Questions (Official Mock Standard)</option>
+              <option value="120">All Available Questions</option>
+            </select>
+          </div>
+
+          <div class="setting-item">
+            <label>Randomize Question Order</label>
+            <label class="toggle-label" for="settingShuffleQuestions">
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Shuffle on every run</span>
+              <div class="toggle-switch">
+                <input type="checkbox" id="settingShuffleQuestions" checked>
+                <span class="toggle-slider"></span>
+              </div>
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>Randomize Answer Choices</label>
+            <label class="toggle-label" for="settingShuffleOptions">
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Shuffle A, B, C, D</span>
+              <div class="toggle-switch">
+                <input type="checkbox" id="settingShuffleOptions" checked>
+                <span class="toggle-slider"></span>
+              </div>
+            </label>
+          </div>
+
+          <div class="setting-item">
+            <label>Instant Explanation Mode</label>
+            <label class="toggle-label" for="settingInstantFeedback">
+              <span style="font-size: 0.85rem; color: var(--text-secondary);">Show rationale on click</span>
+              <div class="toggle-switch">
+                <input type="checkbox" id="settingInstantFeedback">
+                <span class="toggle-slider"></span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Calculation & Reference Tools -->
+      <div class="tools-section">
+        <div class="section-heading">
+          <h3 class="section-title">🧮 Interactive Financial & Operations Tools</h3>
+        </div>
+
+        <div class="tools-grid">
+          <!-- Break-Even Calculator -->
+          <div class="tool-card">
+            <div class="tool-header">
+              <span style="font-size: 1.3rem;">📊</span>
+              <h4 class="tool-title">Break-Even Analysis Calculator</h4>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">
+              Formula: $Q_{BE} = \frac{\text{Fixed Costs}}{\text{Price} - \text{Variable Cost}}$
+            </p>
+            <div class="calc-form">
+              <div class="calc-input-group">
+                <label for="beFixedCost">Total Fixed Costs (R)</label>
+                <input type="number" id="beFixedCost" class="calc-input" value="60000" placeholder="e.g. 60000">
+              </div>
+              <div class="calc-input-group">
+                <label for="bePrice">Selling Price (R)</label>
+                <input type="number" id="bePrice" class="calc-input" value="300" placeholder="e.g. 300">
+              </div>
+              <div class="calc-input-group">
+                <label for="beVarCost">Variable Cost per Unit (R)</label>
+                <input type="number" id="beVarCost" class="calc-input" value="100" placeholder="e.g. 100">
+              </div>
+              <div class="calc-input-group" style="justify-content: flex-end;">
+                <button type="button" id="btnCalcBE" class="btn-primary" style="padding: 0.45rem 0.8rem; font-size: 0.82rem;">Calculate</button>
+              </div>
+              <div id="beResult" class="calc-result-box">
+                Break-Even Quantity: <strong>300 units</strong> (Revenue: R90,000)
+              </div>
+            </div>
+          </div>
+
+          <!-- EOQ Calculator -->
+          <div class="tool-card">
+            <div class="tool-header">
+              <span style="font-size: 1.3rem;">📦</span>
+              <h4 class="tool-title">Economic Order Quantity (EOQ)</h4>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">
+              Formula: $EOQ = \sqrt{\frac{2 \times D \times S}{H}}$
+            </p>
+            <div class="calc-form">
+              <div class="calc-input-group">
+                <label for="eoqDemand">Annual Demand ($D$)</label>
+                <input type="number" id="eoqDemand" class="calc-input" value="10000" placeholder="e.g. 10000">
+              </div>
+              <div class="calc-input-group">
+                <label for="eoqOrderCost">Order Cost ($S$ in R)</label>
+                <input type="number" id="eoqOrderCost" class="calc-input" value="50" placeholder="e.g. 50">
+              </div>
+              <div class="calc-input-group">
+                <label for="eoqHoldCost">Holding Cost ($H$ in R)</label>
+                <input type="number" id="eoqHoldCost" class="calc-input" value="4" placeholder="e.g. 4">
+              </div>
+              <div class="calc-input-group" style="justify-content: flex-end;">
+                <button type="button" id="btnCalcEOQ" class="btn-primary" style="padding: 0.45rem 0.8rem; font-size: 0.82rem;">Calculate</button>
+              </div>
+              <div id="eoqResult" class="calc-result-box">
+                Optimal Order Quantity (EOQ): <strong>500 units</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Liquidity Ratios Calculator -->
+          <div class="tool-card">
+            <div class="tool-header">
+              <span style="font-size: 1.3rem;">💳</span>
+              <h4 class="tool-title">Liquidity & Working Capital Ratios</h4>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary);">
+              Current Ratio = $CA / CL$ | Quick Ratio = $(CA - \text{Inv}) / CL$
+            </p>
+            <div class="calc-form">
+              <div class="calc-input-group">
+                <label for="ratioCA">Current Assets (R)</label>
+                <input type="number" id="ratioCA" class="calc-input" value="500000" placeholder="e.g. 500000">
+              </div>
+              <div class="calc-input-group">
+                <label for="ratioCL">Current Liabilities (R)</label>
+                <input type="number" id="ratioCL" class="calc-input" value="250000" placeholder="e.g. 250000">
+              </div>
+              <div class="calc-input-group">
+                <label for="ratioInv">Inventory (R)</label>
+                <input type="number" id="ratioInv" class="calc-input" value="250000" placeholder="e.g. 250000">
+              </div>
+              <div class="calc-input-group" style="justify-content: flex-end;">
+                <button type="button" id="btnCalcRatios" class="btn-primary" style="padding: 0.45rem 0.8rem; font-size: 0.82rem;">Calculate</button>
+              </div>
+              <div id="ratioResult" class="calc-result-box">
+                Current Ratio: <strong>2.00:1</strong> | Quick Ratio: <strong>1.00:1</strong> | NWC: <strong>R250,000</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================================================================
+         VIEW 2: ACTIVE TEST / QUIZ SCREEN
+         =================================================================== -->
+    <section id="viewTest" class="view-section">
+      
+      <!-- Top Status Bar -->
+      <div class="test-topbar">
+        <div class="test-meta">
+          <span id="testModeBadge" class="test-mode-badge">Exam Session</span>
+          <span id="questionCounter" class="question-counter">Question 1 of 40</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <div id="testTimer" class="test-timer">⏳ 50:00</div>
+          <button type="button" id="btnOpenNav" class="btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.82rem;" title="View Question Grid">
+            📋 Grid
+          </button>
+          <button type="button" id="btnExitTest" class="btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.82rem; color: var(--error);" title="Exit Test">
+            ✖ Exit
+          </button>
+        </div>
+
+        <div class="progress-container">
+          <div id="progressBarFill" class="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <!-- Main Question Card -->
+      <div class="question-card">
+        <div class="question-header">
+          <div id="questionUnitTag" class="question-unit-tag">
+            <span>SU7</span> • Operations Management
+          </div>
+          <button type="button" id="btnFlag" class="btn-flag">
+            🏳️ Flag for Review
+          </button>
+        </div>
+
+        <div id="questionText" class="question-text">
+          Loading examination scenario...
+        </div>
+
+        <!-- 4 Option Buttons -->
+        <div id="optionsList" class="options-list">
+          <!-- Dynamic Option Buttons -->
+        </div>
+
+        <!-- Pedagogical Rationale Panel -->
+        <div id="explanationBox" class="explanation-box" style="display: none;">
+          <!-- In-depth feedback populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Bottom Navigation Controls -->
+      <div class="test-controls">
+        <button type="button" id="btnPrev" class="btn-secondary">
+          ← Previous
+        </button>
+
+        <div style="display: flex; gap: 0.75rem;">
+          <button type="button" id="btnNext" class="btn-primary">
+            Next →
+          </button>
+          <button type="button" id="btnSubmitExam" class="btn-submit-exam" style="display: none;">
+            Finish & Grade Exam 🏆
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================================================================
+         VIEW 3: ANALYTICS & RESULTS DASHBOARD
+         =================================================================== -->
+    <section id="viewResults" class="view-section">
+      
+      <!-- Primary Score Card -->
+      <div class="results-header-card">
+        <span id="scoreBadge" class="score-badge distinction">Distinction Standard</span>
+        <div id="scorePercentage" class="score-percentage">88%</div>
+        <p id="scoreDetailsText" class="score-details-text">You achieved 35 out of 40 marks.</p>
+
+        <div class="results-stats-grid">
+          <div class="stat-box">
+            <div id="statTotal" class="stat-value">40</div>
+            <div class="stat-label">Total Questions</div>
+          </div>
+          <div class="stat-box">
+            <div id="statCorrect" class="stat-value" style="color: var(--success);">35</div>
+            <div class="stat-label">Correct Answers</div>
+          </div>
+          <div class="stat-box">
+            <div id="statIncorrect" class="stat-value" style="color: var(--error);">5</div>
+            <div class="stat-label">Missed Answers</div>
+          </div>
+          <div class="stat-box">
+            <div id="statTime" class="stat-value">28:15</div>
+            <div class="stat-label">Total Time</div>
+          </div>
+          <div class="stat-box">
+            <div id="statAvgTime" class="stat-value">42s</div>
+            <div class="stat-label">Avg / Question</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chapter Breakdown Section -->
+      <div class="section-heading">
+        <h3 class="section-title">📊 Chapter-by-Chapter Mastery Breakdown</h3>
+      </div>
+
+      <div id="chapterBreakdownContainer" class="breakdown-grid">
+        <!-- Dynamically rendered SU7, SU8, SU9 cards -->
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="results-actions">
+        <button type="button" id="btnPracticeMissed" class="btn-primary" style="background: var(--error);">
+          🎯 Drill Missed Questions Only
+        </button>
+        <button type="button" id="btnRetakeTest" class="btn-primary">
+          🔄 Retake Complete Test
+        </button>
+        <button type="button" id="btnBackHome" class="btn-secondary">
+          🏠 Return to Dashboard
+        </button>
+      </div>
+
+      <!-- Comprehensive Review Log -->
+      <div class="review-section">
+        <div class="section-heading">
+          <h3 class="section-title">🔍 Comprehensive Question Review Log</h3>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="review-filters">
+          <button type="button" class="filter-btn active" data-filter="all">All Questions</button>
+          <button type="button" class="filter-btn" data-filter="missed">Missed Only</button>
+          <button type="button" class="filter-btn" data-filter="flagged">Flagged Only</button>
+          <button type="button" class="filter-btn" data-filter="su7">Study Unit 7</button>
+          <button type="button" class="filter-btn" data-filter="su8">Study Unit 8</button>
+          <button type="button" class="filter-btn" data-filter="su9">Study Unit 9</button>
+        </div>
+
+        <div id="reviewList" class="review-list">
+          <!-- Dynamically populated review questions -->
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Question Navigator Drawer / Modal -->
+  <div id="navModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="navModalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h4 id="navModalTitle" class="modal-title">📋 Question Navigator</h4>
+        <button type="button" id="btnCloseNav" class="modal-close" aria-label="Close Navigator">×</button>
+      </div>
+      <div class="modal-body">
+        <div id="navGrid" class="question-nav-grid">
+          <!-- Nav Buttons -->
+        </div>
+
+        <div class="nav-grid-legend">
+          <div class="legend-item">
+            <span class="legend-swatch" style="background: var(--nwu-purple-subtle); border: 1px solid var(--nwu-purple);"></span>
+            <span>Answered</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-swatch" style="background: var(--bg-card-subtle); border: 1px solid var(--border-color);"></span>
+            <span>Unanswered</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-swatch" style="background: var(--warning); border-radius: 50%;"></span>
+            <span>Flagged for Review</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-swatch" style="border: 2px solid var(--nwu-purple);"></span>
+            <span>Current Question</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <p>North-West University (NWU) • Faculty of Economic and Management Sciences • BMAN121 General Management</p>
+    <div class="footer-links">
+      <span>Curriculum: Study Units 7, 8, & 9</span>
+      <span>•</span>
+      <span>Prescribed Text: <em>Introduction to Business Management & General Management</em></span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
