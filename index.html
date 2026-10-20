@@ -21,7 +21,16 @@
         </div>
       </a>
 
-      <div class="header-actions">
+      <div class="header-actions" style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+        <button type="button" id="tabBtnCheatSheet" class="btn-secondary" style="padding: 0.45rem 0.9rem; font-size: 0.85rem; font-weight: 700; border: 2px solid var(--nwu-gold); background: var(--nwu-gold-subtle); color: var(--text-primary);">
+          ⚡ 1-Page Rapid Cheat Sheet
+        </button>
+        <button type="button" id="tabBtnQuiz" class="btn-secondary active" style="padding: 0.45rem 0.9rem; font-size: 0.85rem; font-weight: 600;">
+          🎯 Quiz Hub
+        </button>
+        <button type="button" id="btnStartRapid20" class="btn-primary" style="padding: 0.45rem 0.9rem; font-size: 0.85rem; font-weight: 700;">
+          🚀 Fast 20-Q Quiz
+        </button>
         <button type="button" id="themeToggle" class="btn-icon" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
           🌙
         </button>
@@ -63,6 +72,21 @@
       </div>
 
       <div class="modes-grid">
+        <!-- Fast 20-Question Rapid Quiz -->
+        <div class="mode-card featured" data-mode="rapid20" style="border-color: var(--nwu-gold);">
+          <div>
+            <div class="mode-icon">⚡</div>
+            <h4 class="mode-title">Fast 20-Question Rapid Quiz</h4>
+            <p class="mode-description">
+              High-speed 20-question exam sprint covering Study Units 7, 8, and 9 with instant answer verification and full distractor breakdowns. Ideal for pre-test warmups!
+            </p>
+          </div>
+          <div class="mode-footer">
+            <span class="mode-badge">20 Questions • Instant Rationale</span>
+            <button type="button" class="btn-start-mode">Launch 20-Q Sprint →</button>
+          </div>
+        </div>
+
         <!-- Full Mock Exam -->
         <div class="mode-card featured" data-mode="mock">
           <div>
@@ -151,10 +175,11 @@
           <div class="setting-item">
             <label for="settingQuestionCount">Questions per Test Session</label>
             <select id="settingQuestionCount" class="setting-select">
-              <option value="15">15 Questions (Quick Quiz)</option>
+              <option value="15">15 Questions (Quick Sprint)</option>
+              <option value="20" selected>20 Questions (Fast Rapid Quiz)</option>
               <option value="25">25 Questions (Standard Practice)</option>
-              <option value="40" selected>40 Questions (Official Mock Standard)</option>
-              <option value="120">All Available Questions</option>
+              <option value="40">40 Questions (Official Mock Standard)</option>
+              <option value="120">All 120 Available Questions</option>
             </select>
           </div>
 
@@ -295,6 +320,207 @@
         </div>
       </div>
 
+    </section>
+
+    <!-- ===================================================================
+         VIEW 1B: 1-PAGE RAPID CHEAT SHEET SUMMARY (SU7, SU8, SU9)
+         =================================================================== -->
+    <section id="viewCheatSheet" class="view-section">
+      <div class="hero-card" style="margin-bottom: 1.5rem; padding: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2 class="hero-title" style="margin-bottom: 0.35rem;">⚡ 1-Page Rapid Exam Cheat Sheet (SU7, SU8 & SU9)</h2>
+            <p class="hero-subtitle" style="margin-bottom: 0;">All core definitions, transformation models, layouts, marketing 4Ps, financial formulas & SA labour laws on one page.</p>
+          </div>
+          <button type="button" onclick="document.getElementById('btnStartRapid20').click()" class="btn-primary" style="font-weight: 700;">
+            🚀 Launch Fast 20-Q Quiz Now →
+          </button>
+        </div>
+      </div>
+
+      <!-- STUDY UNIT 7 CHEAT SHEET -->
+      <div class="question-card" style="margin-bottom: 1.5rem; border-left: 5px solid var(--nwu-purple);">
+        <h3 style="color: var(--nwu-purple); margin-bottom: 0.75rem; font-size: 1.25rem;">🏭 Study Unit 7: Operations & Production Management</h3>
+        
+        <div class="tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+          <div style="background: var(--bg-card-subtle); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);">1. Transformation Model (Inputs → Process → Outputs)</h4>
+            <ul style="padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);">
+              <li><strong>Transformed Resources</strong> (worked on/converted): <em>Materials</em> (raw inputs), <em>Information</em> (data/schedules), <em>Customers</em> (haircuts/patients).</li>
+              <li><strong>Transforming Resources</strong> (do the work): <em>Facilities</em> (buildings, machinery, equipment, technology) & <em>Staff / Human Resources</em>.</li>
+              <li><strong>Goods vs Services:</strong> Goods = tangible, storable, low customer contact, capital-intensive. Services = intangible, simultaneous production & consumption, non-storable, high customer contact.</li>
+            </ul>
+          </div>
+
+          <div style="background: var(--bg-card-subtle); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);">2. Process Types & Operations Layouts</h4>
+            <ul style="padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);">
+              <li><strong>Manufacturing Processes (Low → High Volume):</strong>
+                <br>• <em>Project:</em> One-off, complex, long duration (bridge/dam/ship).
+                <br>• <em>Jobbing:</em> Custom small orders (tailor-made suit, custom furniture).
+                <br>• <em>Batch:</em> Moderate volume in lots (bakery bread batches, clothing sizes).
+                <br>• <em>Mass:</em> High volume, standardized assembly line (cars, smartphones).
+                <br>• <em>Continuous:</em> 24/7 non-stop flow (Sasol petrochemical refinery, Eskom power).
+              </li>
+              <li><strong>Service Processes:</strong> <em>Professional</em> (high contact, custom: lawyers/doctors) → <em>Service Shop</em> (mixed: banks/hotels) → <em>Mass Service</em> (low contact, standardized: airline/supermarket).</li>
+              <li><strong>4 Layout Types:</strong>
+                <br>• <em>Fixed-Position:</em> Product stays stationary; workers/machines move around it (shipbuilding, construction, open-heart surgery).
+                <br>• <em>Process (Functional):</em> Similar machines/functions grouped together (hospitals, job shops).
+                <br>• <em>Product (Line):</em> Workstations in linear sequence matching assembly steps (car assembly, cafeteria line).
+                <br>• <em>Cellular:</em> Dissimilar machines grouped into a "cell" for a specific product family.
+              </li>
+            </ul>
+          </div>
+
+          <div style="background: var(--bg-card-subtle); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);">3. Inventory Formulas, JIT & Total Quality (TQM)</h4>
+            <ul style="padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);">
+              <li><strong>EOQ (Economic Order Quantity):</strong> <code>EOQ = √[(2 × D × S) / H]</code>
+                <br>(<em>D</em> = Annual Demand, <em>S</em> = Ordering cost per order, <em>H</em> = Holding/carrying cost per unit/year). Minimizes total ordering + holding costs.
+              </li>
+              <li><strong>Reorder Point (ROP):</strong> <code>ROP = d × L</code> (<em>d</em> = daily demand, <em>L</em> = lead time in days).</li>
+              <li><strong>JIT (Just-in-Time):</strong> Pull system (triggered by actual customer demand via <em>Kanban</em> signals), zero/minimal buffer inventory, eliminates waste, requires ultra-reliable suppliers.</li>
+              <li><strong>MRP (Material Requirements Planning):</strong> Push system using Master Production Schedule (MPS), Bill of Materials (BOM), and Inventory Records.</li>
+              <li><strong>4 TQM Costs of Quality:</strong>
+                <br>• <em>Prevention Costs:</em> Training, quality planning, supplier vetting (before production).
+                <br>• <em>Appraisal Costs:</em> Inspection, lab testing, audits during/after production.
+                <br>• <em>Internal Failure:</em> Scrap, rework, downtime caught <strong>before</strong> reaching customer.
+                <br>• <em>External Failure:</em> Warranty claims, product recalls, refunds, lost reputation <strong>after</strong> delivery to customer.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- STUDY UNIT 8 CHEAT SHEET -->
+      <div class="question-card" style="margin-bottom: 1.5rem; border-left: 5px solid var(--nwu-gold);">
+        <h3 style="color: var(--nwu-purple); margin-bottom: 0.75rem; font-size: 1.25rem;">🎯 Study Unit 8: Marketing Management</h3>
+        
+        <div class="tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+          <div style="background: var(--bg-card-subtle); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);">1. Orientations, Consumer Behaviour & Research</h4>
+            <ul style="padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);">
+              <li><strong>Marketing Orientations:</strong>
+                <br>• <em>Production:</em> Focus on internal manufacturing efficiency & low cost.
+                <br>• <em>Sales:</em> Aggressive promotion/pushing of unsought or excess stock.
+                <br>• <em>Marketing (Consumer):</em> Customer satisfaction + long-term profitability + organizational integration.
+                <br>• <em>Societal Marketing:</em> Balances customer wants + company profits + long-term societal/environmental welfare.
+              </li>
+              <li><strong>4 Core Pillars of the Marketing Concept:</strong> (1) Consumer orientation, (2) Long-term profit orientation, (3) Organisational integration, (4) Social responsibility.</li>
+              <li><strong>Consumer Decision Process (5 Steps):</strong>
+                <br>1. Need/Problem Recognition → 2. Information Search → 3. Evaluation of Alternatives → 4. Purchase Decision → 5. Post-Purchase Evaluation (<em>Cognitive Dissonance</em> = buyer's remorse/doubt after major purchase).
+              </li>
+              <li><strong>Research Data:</strong> <em>Secondary data</em> (already exists: Stats SA, past sales reports — cheaper/faster) vs <em>Primary data</em> (newly collected for current problem: surveys, focus groups, observation).</li>
+            </ul>
+          </div>
+
+          <div style="background: var(--bg-card-subtle); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);">2. STP (Segmentation, Targeting, Positioning)</h4>
+            <ul style="padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);">
+              <li><strong>4 Bases of Market Segmentation:</strong>
+                <br>• <em>Geographic:</em> Province, city, urban/rural, climate.
+                <br>• <em>Demographic:</em> Age, gender, income, education, family size, LSM.
+                <br>• <em>Psychographic:</em> Lifestyle, personality, social class, values.
+                <br>• <em>Behavioural:</em> Usage rate (heavy/light users), brand loyalty, benefits sought, occasion.
+              </li>
+              <li><strong>3 Target Marketing Strategies:</strong>
+                <br>• <em>Undifferentiated (Mass):</em> 1 marketing mix for the entire market (ignores segment differences).
+                <br>• <em>Differentiated (Multi-segment):</em> Separate tailored marketing mixes for 2+ distinct segments (e.g. Toyota Corolla vs Hilux vs Lexus).
+                <br>• <em>Concentrated (Niche):</em> Focuses all resources on 1 specific niche segment.
+              </li>
+              <li><strong>Positioning:</strong> Creating a distinct image/perception of the brand in the minds of target customers relative to competitors.</li>
+            </ul>
+          </div>
+
+          <div style="background: var(--bg-card-subtle); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);">3. The 4 Ps & Product Life Cycle (PLC)</h4>
+            <ul style="padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);">
+              <li><strong>Product (Consumer Goods Classification):</strong>
+                <br>• <em>Convenience:</em> Frequent, low price, minimal effort (bread, milk, toothpaste).
+                <br>• <em>Shopping:</em> Compared on price/quality/style across stores (furniture, appliances, clothes).
+                <br>• <em>Specialty:</em> Unique brand appeal; buyers won't accept substitutes (Rolex, Ferrari).
+              </li>
+              <li><strong>Price Strategies for New Products:</strong>
+                <br>• <em>Price Skimming:</em> Launch at a high price to recover R&D from early adopters, then lower gradually (tech/smartphones).
+                <br>• <em>Market Penetration Pricing:</em> Launch at a low price to rapidly capture massive market share and deter competitors.
+              </li>
+              <li><strong>Place (Market Coverage Intensity):</strong>
+                <br>• <em>Intensive:</em> Every possible outlet (Coca-Cola, Simba chips).
+                <br>• <em>Selective:</em> Handpicked retailers (high-end electronics, designer clothes).
+                <br>• <em>Exclusive:</em> 1 authorized dealer per region (luxury cars).
+              </li>
+              <li><strong>Product Life Cycle (4 Stages):</strong>
+                <br>1. <em>Introduction:</em> Slow sales, high unit cost, zero/negative profit, build awareness.
+                <br>2. <em>Growth:</em> Rapidly rising sales, competitors enter, profits rise.
+                <br>3. <em>Maturity:</em> Sales peak & plateau, intense price competition, profits level off/decline.
+                <br>4. <em>Decline:</em> Falling sales & profits (harvest or divest).
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- STUDY UNIT 9 CHEAT SHEET -->
+      <div class="question-card" style="margin-bottom: 1.5rem; border-left: 5px solid var(--success);">
+        <h3 style="color: var(--nwu-purple); margin-bottom: 0.75rem; font-size: 1.25rem;">💼 Study Unit 9: Financial Management, HR & SA Labour Legislation</h3>
+        
+        <div class="tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+          <div style="background: var(--bg-card-subtle); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);">1. Financial Principles, Ratios & Break-Even</h4>
+            <ul style="padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);">
+              <li><strong>Primary Goal:</strong> Long-term maximisation of owner/shareholder wealth (value of the firm).</li>
+              <li><strong>Liquidity vs Solvency:</strong>
+                <br>• <em>Liquidity:</em> Ability to pay short-term debts as they fall due (&lt;12 months).
+                <br>• <em>Solvency:</em> Total Assets exceed Total Liabilities (long-term survival).
+              </li>
+              <li><strong>3 Core Principles:</strong> (1) <em>Cost-Benefit</em> (marginal benefits &gt; marginal costs), (2) <em>Risk-Return</em> (higher risk demands higher expected return), (3) <em>Time Value of Money</em> (R1 today is worth more than R1 in the future due to interest/earning potential).</li>
+              <li><strong>Must-Know Formulas:</strong>
+                <br>• <strong>Current Ratio</strong> = <code>Current Assets ÷ Current Liabilities</code> (Norm: <strong>2:1</strong>)
+                <br>• <strong>Quick / Acid-Test Ratio</strong> = <code>(Current Assets − Inventory) ÷ Current Liabilities</code> (Norm: <strong>1:1</strong> — excludes inventory because it is least liquid!)
+                <br>• <strong>Net Working Capital (NWC)</strong> = <code>Current Assets − Current Liabilities</code>
+                <br>• <strong>Debt Ratio</strong> = <code>(Total Debt ÷ Total Assets) × 100</code>
+                <br>• <strong>Break-Even Quantity (Q<sub>BE</sub>)</strong> = <code>Total Fixed Costs ÷ (Selling Price/unit − Variable Cost/unit)</code>
+              </li>
+            </ul>
+          </div>
+
+          <div style="background: var(--bg-card-subtle); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);">2. Human Resource Management (HRM)</h4>
+            <ul style="padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);">
+              <li><strong>Job Analysis = Job Description vs Job Specification:</strong>
+                <br>• <em>Job Description:</em> Focuses on the <strong>JOB</strong> (duties, tasks, responsibilities, reporting line, working conditions).
+                <br>• <em>Job Specification:</em> Focuses on the <strong>PERSON</strong> (minimum qualifications, degree, years of experience, skills required).
+              </li>
+              <li><strong>Recruitment vs Selection:</strong>
+                <br>• <em>Recruitment:</em> Attracting a pool of qualified applicants (Internal = promotions/transfers; raises morale & cheaper, vs External = job portals/universities; brings fresh ideas/innovation).
+                <br>• <em>Selection:</em> Choosing the best candidate from the pool (CV screening → psychometric tests → interviews → reference checks → medical/offer).
+              </li>
+              <li><strong>Training vs Development:</strong> <em>Training</em> = technical skills for current job (short-term). <em>Development</em> = broad managerial growth for future roles (long-term).</li>
+              <li><strong>Appraisal Biases:</strong> <em>Halo effect</em> (1 good trait inflates all ratings), <em>Central tendency</em> (rating everyone average/middle), <em>Recency</em> (only remembering recent weeks).</li>
+            </ul>
+          </div>
+
+          <div style="background: var(--bg-card-subtle); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--text-primary);">3. South African Labour Legislation (High-Yield!)</h4>
+            <ul style="padding-left: 1.2rem; font-size: 0.9rem; line-height: 1.5; color: var(--text-secondary);">
+              <li><strong>BCEA (Basic Conditions of Employment Act):</strong>
+                <br>• Max ordinary hours: <strong>45 hours/week</strong> (9h/day for ≤5-day week; 8h/day for &gt;5-day week).
+                <br>• Max overtime: <strong>10 hours/week</strong> paid at <strong>1.5×</strong> normal wage (or <strong>2.0×</strong> on Sundays & Public Holidays).
+                <br>• Annual leave: <strong>21 consecutive days</strong> paid (15 working days) per year.
+                <br>• Sick leave: 30 days (5-day worker) or 36 days (6-day worker) per 36-month cycle.
+                <br>• Maternity leave: <strong>4 consecutive months</strong>; Family responsibility: <strong>3 days/year</strong>.
+              </li>
+              <li><strong>LRA (Labour Relations Act):</strong>
+                <br>• 3 Fair Dismissal Grounds ONLY: (1) <em>Misconduct</em> (theft/dishonesty), (2) <em>Incapacity</em> (poor performance or ill health), (3) <em>Operational Requirements</em> (retrenchment).
+                <br>• Requires BOTH <strong>Substantive Fairness</strong> (valid fair reason) AND <strong>Procedural Fairness</strong> (fair hearing/process).
+                <br>• Unfair dismissal disputes referred to <strong>CCMA within 30 days</strong> (First step: <em>Conciliation</em> → then <em>Arbitration</em>).
+              </li>
+              <li><strong>EEA (Employment Equity Act):</strong> Eliminates unfair discrimination & implements Affirmative Action for designated groups (Black people [Africans, Coloureds, Indians], women, people with disabilities).</li>
+              <li><strong>SDA & SDL (Skills Development):</strong> <strong>1% Skills Development Levy</strong> on payroll funds <strong>SETAs</strong> & National Skills Fund.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===================================================================

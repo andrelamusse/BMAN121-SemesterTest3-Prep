@@ -40,8 +40,12 @@
     
     // Views
     el.viewHub = document.getElementById('viewHub');
+    el.viewCheatSheet = document.getElementById('viewCheatSheet');
     el.viewTest = document.getElementById('viewTest');
     el.viewResults = document.getElementById('viewResults');
+    el.tabBtnQuiz = document.getElementById('tabBtnQuiz');
+    el.tabBtnCheatSheet = document.getElementById('tabBtnCheatSheet');
+    el.btnStartRapid20 = document.getElementById('btnStartRapid20');
 
     // Hub controls
     el.modeCards = document.querySelectorAll('.mode-card');
@@ -129,12 +133,18 @@
   // =========================================================================
   function showView(viewName) {
     if (el.viewHub) el.viewHub.classList.remove('active');
+    if (el.viewCheatSheet) el.viewCheatSheet.classList.remove('active');
     if (el.viewTest) el.viewTest.classList.remove('active');
     if (el.viewResults) el.viewResults.classList.remove('active');
+
+    if (el.tabBtnQuiz) el.tabBtnQuiz.classList.toggle('active', viewName === 'hub' || viewName === 'test' || viewName === 'results');
+    if (el.tabBtnCheatSheet) el.tabBtnCheatSheet.classList.toggle('active', viewName === 'cheatsheet');
 
     if (viewName === 'hub' && el.viewHub) {
       el.viewHub.classList.add('active');
       renderPreviousScore();
+    } else if (viewName === 'cheatsheet' && el.viewCheatSheet) {
+      el.viewCheatSheet.classList.add('active');
     } else if (viewName === 'test' && el.viewTest) {
       el.viewTest.classList.add('active');
     } else if (viewName === 'results' && el.viewResults) {
@@ -184,13 +194,13 @@
       }
     }
 
-    let count = parseInt(state.settingQuestionCount ? state.settingQuestionCount.value : 40, 10);
+    let count = mode === 'rapid20' ? 20 : parseInt(el.settingQuestionCount ? el.settingQuestionCount.value : 20, 10);
     if (isNaN(count) || count <= 0 || count > pool.length) {
       count = pool.length;
     }
 
     let selected = [];
-    if (mode === 'mock' || mode === 'practice') {
+    if (mode === 'mock' || mode === 'practice' || mode === 'rapid20') {
       // Stratified random selection for balanced unit distribution
       const perUnit = Math.floor(count / 3);
       const remainder = count % 3;
@@ -232,7 +242,7 @@
     state.mode = mode;
     state.shuffleQuestions = el.settingShuffleQuestions ? el.settingShuffleQuestions.checked : true;
     state.shuffleOptions = el.settingShuffleOptions ? el.settingShuffleOptions.checked : true;
-    state.instantFeedback = (mode === 'practice' || (el.settingInstantFeedback && el.settingInstantFeedback.checked));
+    state.instantFeedback = (mode === 'practice' || mode === 'rapid20' || (el.settingInstantFeedback && el.settingInstantFeedback.checked));
 
     state.questions = prepareQuestions(mode);
     if (!state.questions || state.questions.length === 0) {
@@ -268,6 +278,7 @@
   function updateModeBadge() {
     if (!el.testModeBadge) return;
     const badges = {
+      rapid20: '⚡ Fast 20-Question Rapid Quiz',
       mock: '⏱️ Full Mock Exam (Timed)',
       practice: '💡 Study Mode (Instant Feedback)',
       su7: '🏭 SU7: Operations Management',
@@ -957,6 +968,30 @@
         } else {
           showView('hub');
         }
+      });
+    }
+
+    // Tab buttons (Cheat Sheet vs Quiz Hub)
+    if (el.tabBtnQuiz) {
+      el.tabBtnQuiz.addEventListener('click', () => {
+        if (el.viewTest && el.viewTest.classList.contains('active')) {
+          if (confirm('Exit current quiz and return to Quiz Hub?')) {
+            clearInterval(state.timerInterval);
+            showView('hub');
+          }
+        } else {
+          showView('hub');
+        }
+      });
+    }
+    if (el.tabBtnCheatSheet) {
+      el.tabBtnCheatSheet.addEventListener('click', () => {
+        showView('cheatsheet');
+      });
+    }
+    if (el.btnStartRapid20) {
+      el.btnStartRapid20.addEventListener('click', () => {
+        startQuiz('rapid20');
       });
     }
 
